@@ -14,6 +14,9 @@ class Cartes { // On peut appeler class également "model"
     private $color;
     public function get_color(){return $this->color;}
     public function set_color($new){$this->color = $new;}
+    private $bicolor;
+    public function get_bicolor(){return $this->bicolor;}
+    public function set_bicolor($new){$this->bicolor = $new;}
     private $nom;
     public function get_nom(){return $this->nom;}
     public function set_nom($new){$this->nom = $new;}
