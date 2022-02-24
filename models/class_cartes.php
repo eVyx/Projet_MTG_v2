@@ -14,9 +14,6 @@ class Cartes { // On peut appeler class également "model"
     private $color;
     public function get_color(){return $this->color;}
     public function set_color($new){$this->color = $new;}
-    private $bicolor;
-    public function get_bicolor(){return $this->bicolor;}
-    public function set_bicolor($new){$this->bicolor = $new;}
     private $nom;
     public function get_nom(){return $this->nom;}
     public function set_nom($new){$this->nom = $new;}
@@ -57,20 +54,15 @@ class Cartes { // On peut appeler class également "model"
     //methods
     public function read_color(){ //création de la fonction "read_color" pour obtenir toutes les cartes en fonction d'une certaine couleur.
         $req = $this->conn->prepare("SELECT * FROM cartes WHERE color = :color"); // ":" signifie que tu vas attribuer une valeur dans l'execute.
-        $req->execute(array("color"=>$this->color)); //On attribut aux paramètres de la requête la valeur de "color"
-        while ($données=$req->fetch()){ //fetch = résultat de la requête des "cartes" une par une qui sont correspondantes.
-            $cartes[]=$données; //instanciation d'un tableau contenant une carte par ligne par l'index [0]; [1]; [2]; etc.
-        }
-        return $cartes; //renvoie le tableau contenant "toutes" les cartes de la query.
+        $req->execute(array("color"=>$this->get_color())); //On attribut aux paramètres de la requête la valeur de "color"
+        if($req->rowcount() <= 0)
+            echo 'Aucune carte n\'a été détécté !';
+        else{
+            $data=$req->fetchAll();
+        } //fetch = résultat de la requête des "cartes" une par une qui sont correspondantes.
+        var_dump($data);
+        echo $req->rowcount();
+        //return $files; renvoie le tableau contenant "toutes" les cartes de la query.
                         // $cartes uniquement dans la fonction "read_color"
     }
-
-    public function read_color(){ //création de la fonction "read_color" pour obtenir toutes les cartes en fonction d'une certaine couleur.
-        $req = $this->conn->prepare("SELECT * FROM cartes WHERE color = :R"); // ":" signifie que tu vas attribuer une valeur dans l'execute.
-        $req->execute(array("color"=>$this->color)); //On attribut aux paramètres de la requête la valeur de "color"
-        while ($données=$req->fetch()){ //fetch = résultat de la requête des "cartes" une par une qui sont correspondantes.
-            $cartes[]=$données; //instanciation d'un tableau contenant une carte par ligne par l'index [0]; [1]; [2]; etc.
-        }
-        return $cartes;
-
 }

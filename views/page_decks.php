@@ -26,14 +26,14 @@
         <form>
             Sélectionner la couleur : 
             <select name="color">
-                <option value=""W"">Blanc</option>
-                <option value="Blanc">Couleur</option>
-                <option value="Blanc">Couleur</option>
-                <option value="Blanc">Couleur</option>
-                <option value="Blanc">Couleur</option>
+                <option value="W">Blanc</option>
+                <option value="Blanc">Noir</option>
+                <option value="U">Bleu</option>
+                <option value="Blanc">Rouge</option>
+                <option value="Blanc">Vert</option>
 
             </select>
-            Nom du deck :<input type="text" name="nbInsertPerQuery" maxlength="25" size="15">
+            Chercher deck :<input type="text" name="nbInsertPerQuery" maxlength="25" size="15">
         </br>
         </form>
     </div>
