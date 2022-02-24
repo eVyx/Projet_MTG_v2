@@ -64,4 +64,13 @@ class Cartes { // On peut appeler class également "model"
         return $cartes; //renvoie le tableau contenant "toutes" les cartes de la query.
                         // $cartes uniquement dans la fonction "read_color"
     }
+
+    public function read_color(){ //création de la fonction "read_color" pour obtenir toutes les cartes en fonction d'une certaine couleur.
+        $req = $this->conn->prepare("SELECT * FROM cartes WHERE color = :R"); // ":" signifie que tu vas attribuer une valeur dans l'execute.
+        $req->execute(array("color"=>$this->color)); //On attribut aux paramètres de la requête la valeur de "color"
+        while ($données=$req->fetch()){ //fetch = résultat de la requête des "cartes" une par une qui sont correspondantes.
+            $cartes[]=$données; //instanciation d'un tableau contenant une carte par ligne par l'index [0]; [1]; [2]; etc.
+        }
+        return $cartes;
+
 }

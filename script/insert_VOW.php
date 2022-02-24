@@ -43,7 +43,7 @@ foreach ($jsonData->data->cards as $card) { # On parcourt tout les codes d'exten
     $str_color = substr($str_color, 0, -1);
     $str_nom = substr($str_color, 0, -1);  // "substring" est une fonction qui permet de récupérer une partie de la string que l'on souahite. Ex: exemple = substr(abcd), 0, -2 = ab
 
-    echo "Carte allant etre insérée : " . $nom . " /coutManaText: " . $coutManaText . " " . $str_color . " <br>";
+    echo "<img src=\"https://api.scryfall.com/cards/{$card->identifiers->scryfallId}?format=image\" height=\"30%\" width=\"10%\"></img >";
 
     $sql = 'INSERT INTO cartes (`color`,`nom`,`codeExtension`,`type`,`rarete`,`coutTotalMana`,`coutManaText`,`forceCreature`, `enduranceCreature`, `text`,`urlImage`) VALUES(?,?,?,?,?,?,?,?,?,?,?)';
     $query = $db->prepare($sql);
