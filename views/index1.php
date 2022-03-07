@@ -7,7 +7,7 @@
     <title>Acceuil</title>
     </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../HTML_CSS/page_accueil.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/index.css" />
 
 </head>
 
@@ -37,7 +37,7 @@
         <div class="item">
             <!-- Deck Popular 1 -->
             <div class="img_deck">
-                <img src="../Images/aurelia_exemplar_of_justice.png" alt="" height="250px" width="350px">
+                <img src="../images/aurelia_exemplar_of_justice.png " alt="" height="250px" width="350px">
                 <div class="txt_deck">Boros Angels</div>
                 <div class="icon_display">
                     <div class="icon_deck"><img src="../Images/icon_red.png" alt="" width="35" height="38" /></div>

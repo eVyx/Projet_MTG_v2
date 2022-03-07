@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../styles/page_login.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/page_decks.css"/>
     <title>Create decks</title>
 </head>
 <body>
@@ -23,31 +23,34 @@
 
     <div class="format">
         <br><br>
-        <form>
-            Sélectionner la couleur : 
-            <select name="color">
-                <option value="W">Blanc</option>
-                <option value="Blanc">Noir</option>
-                <option value="U">Bleu</option>
-                <option value="Blanc">Rouge</option>
-                <option value="Blanc">Vert</option>
-
+                <form action="" method="GET">
+            Sélectionner le type : 
+            <select id="type" name="type">   
+                <option value="selection">Sélectionner le type</option>
+                <option id="crea" value="crea"> Créature</option>
+                <option id="instant" value="instant">Ephémère</option>
+                <option id="sorcery" value="sorcery">Rituel</option>
+                <option id="enchant" value="enchant">Enchantement</option>
+                <option id="planes" value="enchant">Planeswalker</option>
+                <option id="land" value="land">Terrain</option>
             </select>
-            Chercher deck :<input type="text" name="nbInsertPerQuery" maxlength="25" size="15">
         </br>
         </form>
     </div>
 
-    <nav class="navbar_filtre">
-        <input type="text" placeholder="Rechercher" maxlength="25" size="30">
-                <ul>
-                    <li><img src="../Images/icon_white.png" alt=""width="45" height="48"/></a></li>
-                    <li><img src="../Images/icon_red.png" alt=""width="45" height="48"/></a></li>
-                    <li><img src="../Images/icon_black.png" alt=""width="45" height="48"/></a></li>              
-                    <li><img src="../Images/icon_blue.png" alt=""width="45" height="48"/></a></li>
-                    <li><img src="../Images/icon_green.png" alt=""width="45" height="48"/></a></li>  
-                </ul>
-    </nav>
 
+    <div class="icon_display">
+        <div id="white"class="icon_deck"><img src="../images/icon_white.png" alt="" width="65" height="68" /></div>
+        <div id="red" class="icon_deck"><img src="../images/icon_red.png" alt="" width="65" height="68" /></div>
+        <div id="black" class="icon_deck"><img src="../images/icon_black.png" alt="" width="65" height="68" /></div>
+        <div id="blue"class="icon_deck"><img src="../images/icon_blue.png" alt="" width="65" height="68" /></div>
+        <div id="green"class="icon_deck"><img src="../images/icon_green.png" alt="" width="65" height="68" /></div>
+    </div>
+
+    <!-- affichage des cartes via script_display.js-->
+    <div id="zone">       
+    </div>
+
+    <script src="../script/script_display.js" defer></script>
 </body>
 </html>

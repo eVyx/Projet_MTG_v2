@@ -8,7 +8,7 @@ foreach ($jsonData->data->cards as $card) {
 
 echo "Nom : " . $card->name."</br>";
 echo "Coût en Mana : " . $card->manaValue."</br>";
-echo "Couleur : " . $card->colors."</br>";
+echo "Couleur : " . $card->colors. "</br>";
 echo "<img src=\"https://api.scryfall.com/cards/{$card->identifiers->scryfallId}?format=image\" height=\"30%\" width=\"10%\"></img ></br>";
 
 }
